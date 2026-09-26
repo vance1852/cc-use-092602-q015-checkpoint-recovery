@@ -1,0 +1,8 @@
+{
+  "rule_set_id": "parcel-survey-rules",
+  "version": 1,
+  "title": "村镇地块测绘校核规则（演示）",
+  "area_tolerance_m2": 2.5,
+  "area_tolerance_ratio": 0.005,
+  "boundary_offset_tolerance_m": 0.3
+}

@@ -1,0 +1,48 @@
+{
+  "rule_set_id": "parcel-survey-rules",
+  "rule_set_version": 1,
+  "retry_policy": {"max_attempts": 2, "backoff_seconds": [0, 0]},
+  "shards": [
+    {
+      "shard_id": "north-parcels",
+      "parcels": [
+        {
+          "parcel_id": "N-001",
+          "surveyed_ring": [[0, 0], [30, 0], [30, 20], [0, 20]],
+          "cadastral_ring": [[0, 0], [30, 0], [30, 20], [0, 20]]
+        },
+        {
+          "parcel_id": "N-002",
+          "surveyed_ring": [[40, 0], [60, 0], [60, 10], [40, 10]],
+          "cadastral_ring": [[40, 0], [60, 0], [60, 10], [40, 10]]
+        }
+      ]
+    },
+    {
+      "shard_id": "south-parcels",
+      "parcels": [
+        {
+          "parcel_id": "S-001",
+          "surveyed_ring": [[0, 40], [25, 40], [25, 60], [0, 60]],
+          "cadastral_ring": [[0, 40], [25, 40], [25, 60], [0, 60]]
+        },
+        {
+          "parcel_id": "S-002",
+          "surveyed_ring": [[30, 40], [50, 40], [50, 55], [30, 55]],
+          "cadastral_ring": [[30, 40], [50, 40], [50, 55], [30, 55]]
+        }
+      ]
+    },
+    {
+      "shard_id": "village-summary",
+      "depends_on": ["north-parcels", "south-parcels"],
+      "parcels": [
+        {
+          "parcel_id": "V-001",
+          "surveyed_ring": [[70, 0], [90, 0], [90, 15], [70, 15]],
+          "cadastral_ring": [[70, 0], [90, 0], [90, 15], [70, 15]]
+        }
+      ]
+    }
+  ]
+}
